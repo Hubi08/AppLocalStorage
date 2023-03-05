@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/root.css" />
+    <script defer src="./src/app.js"></script>
+    <title>Exercise #1</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Wykonane zadania</h1>
+      <h3 class="allTime"></h3>
+      <div class="container">
+        <table>
+          <thead class="table__header">
+            <tr>
+              <th class="table__header-head">Data</th>
+              <th class="table__header-head">Spędzony czas</th>
+              <th class="table__header-head">Opis</th>
+              <th class="table__header-head">Typ</th>
+            </tr>
+          </thead>
+          <tbody class="table__body"></tbody>
+        </table>
+
+        <form class="form">
+          <div class="form__input">
+            <input
+              type="date"
+              class="form__input-field form__input--date"
+              placeholder="Wpisz date..."
+            />
+            <input
+              type="text"
+              class="form__input-field form__input--description"
+              placeholder="Dodaj opis..."
+            />
+            <input
+              type="number"
+              class="form__input-field form__input--time"
+              placeholder="Czas wykonywania..."
+            />
+            <div class="form__select">
+              <label for="options">Wybierz typ:</label>
+              <select name="options" class="selection" id="options">
+                <option value=""></option>
+                <option value="programowanie">Programowanie</option>
+                <option value="blabla">Debugowanie</option>
+                <option value="testowanie">Testowanie</option>
+              </select>
+            </div>
+          </div>
+          <div class="btn-container">
+            <button class="btn">Dodaj czynność</button>
+          </div>
+        </form>
+      </div>
+      <button class="btn clear-btn">Usuń wszystkie czynności</button>
+    </div>
+  </body>
+</html>
