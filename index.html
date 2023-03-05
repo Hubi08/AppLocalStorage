@@ -32,21 +32,30 @@
               type="date"
               class="form__input-field form__input--date"
               placeholder="Wpisz date..."
+              required
             />
             <input
               type="text"
               class="form__input-field form__input--description"
               placeholder="Dodaj opis..."
+              required
             />
             <input
               type="number"
               class="form__input-field form__input--time"
               placeholder="Czas wykonywania..."
+              required
             />
             <div class="form__select">
-              <label for="options">Wybierz typ:</label>
-              <select name="options" class="selection" id="options">
-                <option value=""></option>
+              <label for="workType">Wybierz typ:</label>
+              <select
+                name="workType"
+                class="selection"
+                id="workType"
+                required
+                de
+              >
+                <option disabled selected value>Wybierz typ zadania</option>
                 <option value="programowanie">Programowanie</option>
                 <option value="blabla">Debugowanie</option>
                 <option value="testowanie">Testowanie</option>
