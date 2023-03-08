@@ -7,4 +7,12 @@
   --primary: #b8d8d8;
   --secondary: #7a9e9f;
   --accent: #fe5f55;
+
+  /* calculator */
+
+  --primary-calculator: #212121;
+  --calculator-greyer: #424242;
+  --calculator-lighter: #616161;
+  --secondary-calculator: #65c3c3;
+  --expression-calculator: #90a4aea3;
 }

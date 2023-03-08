@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/table.css" />
+    <link rel="stylesheet" href="./src/calculator.css" />
     <link rel="stylesheet" href="./src/root.css" />
     <script defer src="./src/app.js"></script>
+    <script defer src="./src/calculator.js"></script>
     <title>Exercise #1</title>
   </head>
   <body>
@@ -32,23 +34,32 @@
               type="date"
               class="form__input-field form__input--date"
               placeholder="Wpisz date..."
+              required
             />
             <input
               type="text"
               class="form__input-field form__input--description"
               placeholder="Dodaj opis..."
+              required
             />
             <input
               type="number"
               class="form__input-field form__input--time"
               placeholder="Czas wykonywania..."
+              required
             />
             <div class="form__select">
-              <label for="options">Wybierz typ:</label>
-              <select name="options" class="selection" id="options">
-                <option value=""></option>
+              <label for="workTypeInput">Wybierz typ:</label>
+              <select
+                name="workTypeInput"
+                class="selection"
+                id="workTypeInput"
+                required
+                de
+              >
+                <option disabled selected value>Wybierz typ zadania</option>
                 <option value="programowanie">Programowanie</option>
-                <option value="blabla">Debugowanie</option>
+                <option value="debugowanie">Debugowanie</option>
                 <option value="testowanie">Testowanie</option>
               </select>
             </div>
@@ -59,6 +70,87 @@
         </form>
       </div>
       <button class="btn clear-btn">Usuń wszystkie czynności</button>
+      <div class="calculator">
+        <div class="calculator__display">
+          <p class="calculator__display-expression"></p>
+          <p class="calculator__display-result"></p>
+        </div>
+        <div class="calculator__btns">
+          <button class="calculator__btns-btn grey-btn">&#37;</button>
+          <button class="calculator__btns-btn grey-btn">CE</button>
+          <button class="calculator__btns-btn grey-btn clearAll">C</button>
+          <button class="calculator__btns-btn grey-btn backspace">
+            <svg>
+              <use href="/svgs/icons.svg#icon-backspace"></use>
+            </svg>
+          </button>
+          <button class="calculator__btns-btn grey-btn">1/x</button>
+          <button class="calculator__btns-btn grey-btn">x&#178;</button>
+          <button class="calculator__btns-btn grey-btn">&#8730;</button>
+          <!-- dzielenie -->
+          <button
+            class="calculator__btns-btn grey-btn"
+            id="operator--sign-divide"
+          >
+            &#247;
+          </button>
+          <button class="calculator__btns-btn light-btn" data-number="7">
+            7
+          </button>
+          <button class="calculator__btns-btn light-btn" data-number="8">
+            8
+          </button>
+          <button class="calculator__btns-btn light-btn" data-number="9">
+            9
+          </button>
+          <button
+            class="calculator__btns-btn grey-btn"
+            id="operator--sign-multiply"
+          >
+            x
+          </button>
+          <button class="calculator__btns-btn light-btn" data-number="4">
+            4
+          </button>
+          <button class="calculator__btns-btn light-btn" data-number="5">
+            5
+          </button>
+          <button class="calculator__btns-btn light-btn" data-number="6">
+            6
+          </button>
+          <button
+            class="calculator__btns-btn grey-btn"
+            id="operator--sign-distract"
+          >
+            -
+          </button>
+          <button class="calculator__btns-btn light-btn" data-number="1">
+            1
+          </button>
+          <button class="calculator__btns-btn light-btn" data-number="2">
+            2
+          </button>
+          <button class="calculator__btns-btn light-btn" data-number="3">
+            3
+          </button>
+          <button
+            class="calculator__btns-btn grey-btn"
+            id="operator--sign-plus"
+          >
+            &#43;
+          </button>
+          <button class="calculator__btns-btn light-btn">+/-</button>
+          <button class="calculator__btns-btn light-btn" data-number="0">
+            0
+          </button>
+          <button class="calculator__btns-btn light-btn" data-number=".">
+            .
+          </button>
+          <button class="calculator__btns-btn" id="operator--sign-equal">
+            &#61;
+          </button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
