@@ -44,6 +44,17 @@ const clearFields = () => {
   workTypeInput.value = null;
 };
 
+const deleteTask = (removeTaskIdx) => {
+  const filtredSpentTimes = spentTimes.filter((_, idx) => {
+    return idx !== removeTaskIdx;
+  });
+
+  spentTimes = filtredSpentTimes;
+  localStorage.setItem('spentTimes', JSON.stringify(spentTimes));
+  console.log('detelte');
+  renderData();
+};
+
 // render data to table from localStorage
 const renderData = () => {
   const loadedSpentTimes = localStorage.getItem('spentTimes');
@@ -68,12 +79,17 @@ const renderData = () => {
     //values to shows
     const markup = `
     ${spentTimes
-      .map((spentTime) => {
-        return `<tr>
+      .map((spentTime, idx) => {
+        return `<tr class='table__body-heading'>
         <td class='table__body-data'>${spentTime.date}</td>
         <td class='table__body-data'>${spentTime.duration} min</td>
         <td class='table__body-data'>${spentTime.description}</td>
         <td class='table__body-data'>${spentTime.type.toUpperCase()}</td>
+        <td class='table__body-data--remove'>
+            <svg data-idx='${idx}'>
+              <use href='/svgs/icons.svg#icon-minus-circle' ></use>
+            </svg>
+          </td>
         </tr>`;
       })
       .join('')}`;
@@ -104,4 +120,14 @@ clearBtn.addEventListener('click', (e) => {
 
 window.addEventListener('load', () => {
   renderData();
+});
+
+document.querySelector('.table__body').addEventListener('click', (e) => {
+  const removeTaskIdx = parseInt(e.target.dataset.idx);
+
+  if (isNaN(removeTaskIdx)) {
+    return;
+  }
+
+  deleteTask(removeTaskIdx);
 });

@@ -4,6 +4,7 @@
   background-color: var(--primary-calculator);
   border-radius: 0.8rem;
   padding: 0.8rem 0.4rem 0.4rem 0.4rem;
+  margin-top: 1.6rem;
 }
 
 svg {
